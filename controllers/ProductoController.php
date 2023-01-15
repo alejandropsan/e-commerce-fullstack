@@ -7,13 +7,26 @@ class ProductoController {
     public function index() {
         $producto = new Producto();
         $productos = $producto->getRandom(6);
-        
-        
-        
+ 
         //renderizar vista
         require_once 'views/producto/destacados.php';
     }
 
+    
+    
+    public function ver() {
+        
+            if(isset($_GET['id'])){
+              $id = $_GET['id'];
+              
+              $producto = new Producto();
+              $producto->setId($id);
+              $pro = $producto->getOne();
+            }
+             require_once 'views/producto/ver.php';
+    } 
+
+        
     public function gestion() {
         Utils::isAdmin();
 
@@ -21,11 +34,13 @@ class ProductoController {
         $productos = $producto->getAll();
         require_once 'views/producto/gestion.php';
     }
+    
 
     public function crear() {
         Utils::isAdmin();
         require_once 'views/producto/crear.php';
     }
+    
 
     public function save() {
         Utils::isAdmin();
@@ -99,6 +114,7 @@ class ProductoController {
             header("Location:" . base_url . "producto/gestion");
         }
     }
+    
 
     public function eliminar() {
         Utils::isAdmin();

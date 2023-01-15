@@ -3,17 +3,19 @@
     <?php if ($productos->num_rows == 0): ?>
         <p>No hay productos para mostrar</p>
     <?php else: ?>
-        
+
         <?php while ($product = $productos->fetch_object()): ?>
             <div class="product">
-                <?php if ($product->imagen != null): ?>
-                    <img src="<?= base_url ?>uploads/images/<?= $product->imagen ?>" />
-                <?php else: ?> 
-                    <img src="assets/img/camiseta.png" />
-                <?php endif; ?>
-                <h2><?= $product->nombre ?></h2>
+                <a href="<?= base_url ?>producto/ver&id=<?= $product->id ?>">
+                    <?php if ($product->imagen != null): ?>
+                        <img src="<?= base_url ?>uploads/images/<?= $product->imagen ?>" />
+                    <?php else: ?> 
+                        <img src="<?= base_url ?>assets/img/camiseta.png" />
+                    <?php endif; ?>
+                    <h2><?= $product->nombre ?></h2>
+                </a>
                 <p><?= $product->precio ?></p>
-                <a href="" class="button">Comprar</a>
+                <a href="<?=base_url?>carrito/add&id=<?= $product->id?>" class="button">Comprar</a>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>

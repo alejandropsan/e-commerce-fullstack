@@ -37,7 +37,7 @@ a:hover{
 
 table{
     width: 100%;
-    border: 1px solid #555;
+    border-bottom: 1px solid #ccc;
     text-align: center;
 }
 
@@ -290,6 +290,15 @@ button{
 
 
 /*PRODUCTOS*/
+.product a{
+    color: black;
+    text-decoration: none;
+}
+
+.product a:hover{
+    color: #555;
+}
+
 .product{
     width: 30%;
     float: left;
@@ -305,6 +314,12 @@ button{
     margin-bottom: 10px;
 }
 
+.img-carrito{
+    display: block;
+    margin: 10px auto;
+    height: 80px;
+}
+
 .product h2{
     font-size: 18px;
     margin-bottom: 10px;
@@ -314,6 +329,43 @@ button{
     margin-bottom: 10px;
     font-weight: bold;
     color: #555;
+}
+
+#detail-product{
+    width: 100%;
+}
+
+#detail-product .image{
+    display: block;
+    width: 47%;
+    float: left;
+    margin-right: 15px;
+}
+
+#detail-product img{
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+#detail-product .data{
+    width: 50%;
+    float: left;
+}
+
+#detail-product .description{
+    margin-bottom: 20px;
+}
+
+#detail-product .price{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+#detail-product .button{
+    width: 200px;
+    text-align: center;
 }
 
 
@@ -326,5 +378,55 @@ button{
     color: white;
     background-color: #222222;
     border-top: 4px solid #01B1EA;
+}
+
+/*CARRITO*/
+.delete-carrito{
+    width: 295px;
+    float: left;
+}
+
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.total-carrito{
+    width: 295px;
+    float: right;
+}
+
+.total-carrito h3{
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
+}
+
+.updown-unidades{
+    width: 38px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    float: left;
+    padding: 2px;
+    margin: 7px;
     
 }
+
+
